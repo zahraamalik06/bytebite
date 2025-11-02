@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Bytebite</title> 
+    
+    <link rel="stylesheet" href="style.css">
+                  
+    
+
+</head>
+<body> 
+   <nav> 
+    <h1 id="Bytebite">Byte Bite</h1>
+        <ul>
+             <li><a href="#meals">Meals</a></li>
+             <li><a href="#snacks">Snacks</a></li>
+             <li><a href="#drinks">Drinks</a></li>
+        </ul>
+   </nav>
+
+   <header>
+    <section>
+        <h1>Welcome to ByteBite!</h1>
+        <p>“Welcome to ByteBite — Taste-Test the Future of Campus Snacking!”</p>
+        <p>Rate what you’d love to see in your vending machine. Every vote counts.</p>
+    </section>  
+    <img src="assets/Byte bite logo.gif" alt="logo" id="logo">
+   </header>
+
+   <div id="meals">
+    <h1>Healthy Meals</h1>
+    <section id="meal1" data-item="sushi-box">
+        <img src="assets/custom-sushi-boxes.webp" alt="sushi box" width="300px">
+        <p>Sushi Box</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('sushi-box', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('sushi-box', 'down', this)">👎</button>
+         <span class="downvote-count">0</span>
+       </div>
+    </section>
+
+    <section id="meal2" data-item="salad">
+        <img src="assets/salads.gif" alt="salad" width="300px">
+        <p>Salad</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('salad', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('salad', 'down', this)">👎</button>
+         <span class="downvote-count">0</span>
+        </div>
+    </section>
+
+    <section id="meal3" data-item="chicken-rice-bowl">
+        <img src="assets/healthybowl.gif" alt="healthy bowl" width="300px">
+        <p>Chicken and Rice bowl</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('chicken-rice-bowl', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('chicken-rice-bowl', 'down', this)">👎</button>
+         <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="meal4" data-item="sandwiches">
+        <img src="assets/PEQ+label+mockup_group+sandwiches.png.webp" alt="sandwiches" width="400px">
+        <p>Sandwiches</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('sandwiches', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('sandwiches', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+        </div>
+    </section>
+
+    <section id="meal5" data-item="pasta">
+        <img src="assets/970568864-C1N1.webp" alt="pasta" width="300px">
+        <p>Pasta</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('pasta', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('pasta', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="meal6" data-item="noodles">
+        <img src="assets/healthynoodles.gif" alt="noodles" width="300px">
+        <p>Noodles</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('noodles', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('noodles', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+   </div>
+
+<hr>
+
+   <div id="snacks" data-item="fruit-salad">
+    <h1>Snacks</h1>
+    <section id="snack1">
+        <img src="assets/fruit salad.gif" alt="fruit salad" width="300px">
+        <p>Fruit Salad</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('fruit-salad', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('fruit-salad', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="snack2" data-item="nuts">
+        <img src="assets/healthysnacknuts.gif" alt="snack nuts" width="300px">
+        <p>Nuts</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('nuts', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('nuts', 'down', this)">👎</button>
+         <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="snack3" data-item="popcorn">
+        <img src="assets/popcorn.gif" alt="popcorn" width="300px">
+        <p>popcorn</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('popcorn', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('popcorn', 'down', this)">👎</button>
+         <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="snack4" data-item="rice-cake">
+        <img src="assets/ricecake.gif" alt="ricecake" width="300px" >
+        <p>Rice Cake</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('rice-cake', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('rice-cake', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="snack5" data-item="snack-bar">
+        <img src="assets/snackbar.gif" alt="snack bar" width="300px">
+        <p>Snack Bar</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('snack-bar', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('snack-bar', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="snack6" data-item="yogurt-bowl">
+        <img src="assets/yogurtbowl.gif" alt="yogurt bowl" width="300px">
+        <p>yogurt Bowl</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('yogurt-bowl', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('yogurt-bowl', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+   </div>
+
+<hr>
+
+   <div id="drinks" data-item="bloom">
+    <h1>Drinks</h1>
+    <section id="drink1">
+        <img src="assets/bloom.gif" alt="bloom" width="300px">
+        <p>Bloom</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('bloom', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('bloom', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="drink2" data-item="celsius-energy-drinks">
+        <img src="assets/celsius.gif" alt="celsius" width="300px">
+        <p>Celsius Energy Drinks</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('celsius-energy-drinks', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('celsius-energy-drinks', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="drink3" data-item="smoothies">
+        <img src="assets/smoothies.gif" alt="smoothies" width="300px">
+        <p>Smoothies</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('smoothies', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('smoothies', 'down', this)">👎</button>
+         <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="drink4" data-item="sparkling-drinks">
+        <img src="assets/sparklingdrinks.gif" alt="sparkling drinks" width="300px">
+        <p>Sparkling Drinks</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('sparkling-drinks', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('sparkling-drinks', 'down', this)">👎</button>
+         <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="drink5" data-item="bottled-coffee-zero-processed-sugar">
+        <img src="assets/zerosugarcoffee.gif" alt="zero sugar coffee" width="300px">
+        <p>Bottled coffee (Zero processed sugar)</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('bottled-coffee-zero-processed-sugar', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('bottled-coffee-zero-processed-sugar', 'down', this)">👎</button>
+         <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+    <section id="drink6" data-item="iced-tea">
+        <img src="assets/healthyicedtea.gif" alt="iced tea" width="300px">
+        <p>Iced Tea</p>
+        <div class="vote-buttons">
+         <button class="upvote" onclick="vote('iced-tea', 'up', this)">👍</button>
+         <span class="upvote-count">0</span>
+         <button class="downvote" onclick="vote('iced-tea', 'down', this)">👎</button>
+          <span class="downvote-count">0</span>
+         </div>
+    </section>
+
+   </div>
+   <footer>
+    <p>© 2025 ByteBite — Taste the Future, One Byte at a Time 🍴</p>
+    <p>
+      <a href="#meals">Meals</a> | 
+      <a href="#snacks">Snacks</a> | 
+      <a href="#drinks">Drinks</a>
+    </p>
+  </footer>
+
+<script>
+const API_URL = "http://127.0.0.1:5001"; // your Flask backend URL
+
+// Voting function
+async function vote(item, type, button) {
+  const section = button.closest('section');
+  const upCountEl = section.querySelector('.upvote-count');
+  const downCountEl = section.querySelector('.downvote-count');
+
+  // Prevent multiple votes per session
+  const votedItems = JSON.parse(sessionStorage.getItem('votedItems') || '[]');
+  if (votedItems.includes(item)) {
+    alert("You already voted for this item in this session!");
+    return;
+  }
+
+  try {
+    // Send vote to backend
+    const res = await fetch(`${API_URL}/vote`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ item, type })
+    });
+
+    if (!res.ok) throw new Error("Server responded with " + res.status);
+
+    const data = await res.json();
+
+    if (data.error) {
+      alert("Error: " + data.error);
+      return;
+    }
+
+    // Update vote counters
+    upCountEl.textContent = data.votes.up;
+    downCountEl.textContent = data.votes.down;
+
+    // Disable buttons and highlight vote
+    section.querySelectorAll('button').forEach(btn => btn.disabled = true);
+    button.classList.add('active');
+
+    // Remember voted item
+    votedItems.push(item);
+    sessionStorage.setItem('votedItems', JSON.stringify(votedItems));
+
+    // Show confirmation message
+    alert("✅ Your vote has been counted!");
+
+  } catch (err) {
+    console.error("Vote failed:", err);
+    alert("⚠️ Failed to submit your vote. Please try again later.");
+  }
+}
+
+// Load current vote counts when page loads
+window.addEventListener('load', async () => {
+  try {
+    const res = await fetch(`${API_URL}/votes`);
+    if (!res.ok) throw new Error("Server responded with " + res.status);
+
+    const votes = await res.json();
+
+    document.querySelectorAll('section[data-item]').forEach(section => {
+      const item = section.dataset.item;
+      const upCountEl = section.querySelector('.upvote-count');
+      const downCountEl = section.querySelector('.downvote-count');
+
+      if (votes[item]) {
+        upCountEl.textContent = votes[item].up;
+        downCountEl.textContent = votes[item].down;
+      }
+    });
+  } catch (err) {
+    console.error("Failed to load vote counts:", err);
+  }
+});
+</script>
+
+
+
+
+
+</body>
+</html>

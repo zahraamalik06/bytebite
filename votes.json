@@ -1,0 +1,14 @@
+{
+  "pasta": {
+    "up": 1,
+    "down": 0
+  },
+  "salad": {
+    "up": 0,
+    "down": 2
+  },
+  "sparkling-drinks": {
+    "up": 1,
+    "down": 0
+  }
+}

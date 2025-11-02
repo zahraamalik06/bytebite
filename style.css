@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'CHIDO Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('CHIDO Regular'), url('chido.woff') format('woff');
+}
+
+nav {
+    background-color: #326c28;
+    width: 100%;
+    height: 80px;
+    border-radius: 24px;
+    align-content: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline;
+    padding: 10px;
+    font-family: 'CHIDO Regular', sans-serif;
+    font-size: 24px;
+}
+
+nav ul {
+    text-align: right;
+    align-content: center;
+    padding-right: 20px;
+}
+
+nav #Bytebite {
+    font-size: 36px;
+    color: white;
+    font-family: 'CHIDO Regular', sans-serif;
+    text-align: left;
+    padding-left: 20px;
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;  
+}
+
+
+header {
+    color: #326c28;
+    font-family: 'CHIDO Regular', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding-left: 130px;
+    margin: 10px;
+    border: #326c28 solid 10px;
+    border-radius: 24px;
+}
+
+header section {
+    grid-column: 1/2;
+    grid-row: auto;
+    padding-left: 50px;
+    align-content: center;
+}
+
+header section h1 {
+    font-size: 48px;
+   
+}
+header section p {
+    font-size: 24px;
+    width: 80%;
+}
+
+#logo {
+   grid-column: 2/3;
+   grid-row: auto;
+   width: 400px;
+   justify-self: start;
+   align-content: center;
+}
+
+#meals  , #snacks , #drinks{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+#meals h1 , #snacks h1 , #drinks h1{
+    grid-column: 1/4;
+    font-family: 'CHIDO Regular', sans-serif;
+    font-size: 36px;
+    color: #326c28;
+    text-align: center;
+}
+
+#meal1 , #meal2 , #meal3 , #meal4 , #meal5 , #meal6 ,
+ #snack1 , #snack2 , #snack3 , #snack4 , #snack5 , #snack6 ,
+    #drink1 , #drink2 , #drink3 , #drink4 , #drink5 , #drink6
+
+ {
+    border: 5px solid #326c28;
+    border-radius: 24px;
+    padding: 10px;
+    text-align: center;
+    font-family: 'CHIDO Regular', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+#meals p , #snacks p , #drinks p{
+    font-size: 18px;
+    font-family: "CHIDO Regular" ,sans-serif;
+    color: #326c28;
+    align-self: center;
+}
+
+#meals img , #snacks img , #drinks img {
+    align-self: center;
+    justify-self: center;
+}
+
+hr {
+    border: 2px solid #326c28;
+    margin: 40px 0px 0px 0px;
+}
+
+
+
+
+.vote-buttons {
+  margin-top: 10px;
+}
+
+.vote-buttons button {
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.upvote {
+  background-color: #326c28;
+}
+
+.downvote {
+  background-color: #326c28;
+}
+
+.upvote.active {
+  border: rgb(67, 160, 67) 4px solid;
+  color: white;
+}
+
+.downvote.active {
+    border: red 4px solid;
+    color: white;
+}
+
+
+footer {
+      background-color: #326c28;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-family: 'CHIDO Regular', sans-serif;
+    }
+
+    footer a {
+      color: #f4b400;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    button.active {
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 6px;
+    }
+
+    .vote-buttons button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+
+@media screen and (max-width: 480px){
+   nav {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+   }
+
+   nav ul {
+    align-content: center;
+    text-align: center;
+   }
+   nav #Bytebite {
+    text-align: center;
+   }
+
+   header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 0%;
+   }
+
+   header section {
+    grid-column: auto;
+    text-align: left;
+    padding-left: 0%;
+    margin: 0;
+    align-content: center;
+    text-align: center;
+    justify-self: left;
+   }
+
+   header section h1 {
+    font-size: 36px;
+    
+   }
+
+    header section p {
+    font-size: 18px;
+    }
+
+   
+
+
+    #logo {
+     grid-column: auto;
+     width: 300px;
+     justify-self: center;
+     margin-top: 20px;
+    }
+
+    #meals  , #snacks , #drinks {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    #meal1 , #meal2 , #meal3 , #meal4 , #meal5 , #meal6 ,
+ #snack1 , #snack2 , #snack3 , #snack4 , #snack5 , #snack6 ,
+    #drink1 , #drink2 , #drink3 , #drink4 , #drink5 , #drink6
+    {
+        grid-column: 1/2;
+       justify-self: center;
+    }
+
+
+
+
+    
+}
