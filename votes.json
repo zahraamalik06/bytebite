@@ -1,42 +1,42 @@
 {
   "salad": {
-    "up": 2,
+    "up": 0,
     "down": 0
   },
   "fruit-salad": {
-    "up": 4,
-    "down": 1
+    "up": 0,
+    "down": 0
   },
   "rice-cake": {
-    "up": 1,
+    "up": 0,
     "down": 0
   },
   "iced-tea": {
-    "up": 1,
+    "up": 0,
     "down": 0
   },
   "nuts": {
     "up": 0,
-    "down": 1
+    "down": 0
   },
   "bottled-coffee-zero-processed-sugar": {
-    "up": 1,
+    "up": 0,
     "down": 0
   },
   "sparkling-drinks": {
-    "up": 1,
+    "up": 0,
     "down": 0
   },
   "chicken-rice-bowl": {
-    "up": 1,
+    "up": 0,
     "down": 0
   },
   "snack-bar": {
-    "up": 1,
+    "up": 0,
     "down": 0
   },
   "noodles": {
-    "up": 1,
+    "up": 0,
     "down": 0
   }
 }
