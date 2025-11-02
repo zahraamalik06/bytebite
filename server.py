@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 DATA_FILE = "votes.json"
-FRONTEND_DIR = "index.html, style.css, assets/"  # put index.html, style.css, assets/ here
+FRONTEND_DIR = "frontend"  # put index.html, style.css, assets/ here
 
 def load_votes():
     if not os.path.exists(DATA_FILE):
