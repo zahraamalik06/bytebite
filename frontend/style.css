@@ -232,6 +232,7 @@ footer {
 
     header section p {
     font-size: 18px;
+    padding-left: 30px;
     }
 
    
@@ -247,6 +248,7 @@ footer {
     #meals  , #snacks , #drinks {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        margin-left: 33px;
     }
 
     #meal1 , #meal2 , #meal3 , #meal4 , #meal5 , #meal6 ,
@@ -255,9 +257,12 @@ footer {
     {
         grid-column: 1/2;
        justify-self: center;
+       max-width: 300px;
     }
 
-
+   #meals img , #snacks img, #drinks img {
+    max-width: 300px;
+   }
 
 
     
