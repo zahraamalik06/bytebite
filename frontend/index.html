@@ -102,9 +102,9 @@
 
 <hr>
 
-   <div id="snacks" data-item="fruit-salad">
+   <div id="snacks" >
     <h1>Snacks</h1>
-    <section id="snack1">
+    <section id="snack1" data-item="fruit-salad">
         <img src="assets/fruit salad.gif" alt="fruit salad" width="300px">
         <p>Fruit Salad</p>
         <div class="vote-buttons">
@@ -254,79 +254,60 @@
 <script>
 const API_URL = ""; // your Flask backend URL
 
+
 // Voting function
 async function vote(item, type, button) {
-  const section = button.closest('section');
-  const upCountEl = section.querySelector('.upvote-count');
-  const downCountEl = section.querySelector('.downvote-count');
-
-  // Prevent multiple votes per session
-  const votedItems = JSON.parse(sessionStorage.getItem('votedItems') || '[]');
-  if (votedItems.includes(item)) {
-    alert("You already voted for this item in this session!");
-    return;
-  }
-
   try {
-    // Send vote to backend
-    const res = await fetch(`${API_URL}/vote`, {
+    const res = await fetch("/vote", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ item, type })
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({item, type})
     });
 
-    if (!res.ok) throw new Error("Server responded with " + res.status);
-
     const data = await res.json();
+    if (!data.success) throw new Error("Vote failed");
 
-    if (data.error) {
-      alert("Error: " + data.error);
-      return;
-    }
+    const section = button.closest("section");
+    section.querySelector(".upvote-count").textContent = data.votes.up;
+    section.querySelector(".downvote-count").textContent = data.votes.down;
 
-    // Update vote counters
-    upCountEl.textContent = data.votes.up;
-    downCountEl.textContent = data.votes.down;
-
-    // Disable buttons and highlight vote
-    section.querySelectorAll('button').forEach(btn => btn.disabled = true);
-    button.classList.add('active');
-
-    // Remember voted item
-    votedItems.push(item);
-    sessionStorage.setItem('votedItems', JSON.stringify(votedItems));
-
-    // Show confirmation message
-    alert("✅ Your vote has been counted!");
-
+    section.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
   } catch (err) {
     console.error("Vote failed:", err);
-    alert("⚠️ Failed to submit your vote. Please try again later.");
   }
 }
 
+
 // Load current vote counts when page loads
-window.addEventListener('load', async () => {
+// Initialize counters from server
+async function loadVotes() {
   try {
-    const res = await fetch(`${API_URL}/votes`);
-    if (!res.ok) throw new Error("Server responded with " + res.status);
+    const response = await fetch("/votes"); // include Flask port
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const votes = await response.json();
 
-    const votes = await res.json();
-
-    document.querySelectorAll('section[data-item]').forEach(section => {
+    document.querySelectorAll("section[data-item]").forEach(section => {
       const item = section.dataset.item;
-      const upCountEl = section.querySelector('.upvote-count');
-      const downCountEl = section.querySelector('.downvote-count');
+      const upCountEl = section.querySelector(".upvote-count");
+      const downCountEl = section.querySelector(".downvote-count");
 
       if (votes[item]) {
-        upCountEl.textContent = votes[item].up;
-        downCountEl.textContent = votes[item].down;
+        upCountEl.textContent = votes[item].up || 0;
+        downCountEl.textContent = votes[item].down || 0;
+      } else {
+        upCountEl.textContent = 0;
+        downCountEl.textContent = 0;
       }
     });
-  } catch (err) {
-    console.error("Failed to load vote counts:", err);
+  } catch (error) {
+    console.error("Failed to load votes:", error);
   }
-});
+}
+
+
+window.addEventListener("load", loadVotes);
+
 </script>
 
 

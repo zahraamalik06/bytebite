@@ -1,13 +1,41 @@
 {
-  "pasta": {
+  "salad": {
+    "up": 2,
+    "down": 0
+  },
+  "fruit-salad": {
+    "up": 4,
+    "down": 1
+  },
+  "rice-cake": {
     "up": 1,
     "down": 0
   },
-  "salad": {
+  "iced-tea": {
+    "up": 1,
+    "down": 0
+  },
+  "nuts": {
     "up": 0,
-    "down": 2
+    "down": 1
+  },
+  "bottled-coffee-zero-processed-sugar": {
+    "up": 1,
+    "down": 0
   },
   "sparkling-drinks": {
+    "up": 1,
+    "down": 0
+  },
+  "chicken-rice-bowl": {
+    "up": 1,
+    "down": 0
+  },
+  "snack-bar": {
+    "up": 1,
+    "down": 0
+  },
+  "noodles": {
     "up": 1,
     "down": 0
   }

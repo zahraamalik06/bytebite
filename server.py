@@ -18,8 +18,19 @@ def load_votes():
             return {}
 
 def save_votes(votes):
-    with open(DATA_FILE, "w") as f:
+    with open("votes.json", "w") as f:
         json.dump(votes, f, indent=2)
+
+with open("votes.json", "r+") as f:
+    try:
+        votes = json.load(f)
+    except json.JSONDecodeError:
+        votes = {}
+    # update votes here
+    f.seek(0)
+    json.dump(votes, f, indent=2)
+    f.truncate()
+
 
 # Serve front-end
 @app.route("/", defaults={"path": ""})
@@ -56,11 +67,11 @@ def add_vote():
 
 if __name__ == "__main__":
     # Use port from Render environment
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port, debug=True)
 
 
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+#if __name__ == "__main__":
+    #app.run(host="0.0.0.0", port=5001, debug=True)
