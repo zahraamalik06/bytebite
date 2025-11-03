@@ -258,7 +258,7 @@ const API_URL = ""; // your Flask backend URL
 // Voting function
 async function vote(item, type, button) {
   try {
-    const res = await fetch("https://bytebite-axob.onrender.com/vote", {
+    const res = await fetch("https://690894262d902d0651b0e8af.mockapi.io/vote", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({item, type})
@@ -283,7 +283,7 @@ async function vote(item, type, button) {
 // Initialize counters from server
 async function loadVotes() {
   try {
-    const response = await fetch("https://bytebite-axob.onrender.com/votes"); // include Flask port
+    const response = await fetch("https://690894262d902d0651b0e8af.mockapi.io/votes"); // include Flask port
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const votes = await response.json();
 
