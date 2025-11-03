@@ -258,7 +258,7 @@ const API_URL = ""; // your Flask backend URL
 // Voting function
 async function vote(item, type, button) {
   try {
-    const res = await fetch("https://690894262d902d0651b0e8af.mockapi.io/vote", {
+    const res = await fetch("https://690894262d902d0651b0e8af.mockapi.io/votes", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({item, type})
