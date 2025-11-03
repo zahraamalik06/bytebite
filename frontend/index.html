@@ -268,6 +268,11 @@ async function loadVotes() {
 
       if (upEl) upEl.textContent = vote.up || 0;
       if (downEl) downEl.textContent = vote.down || 0;
+
+      // Disable buttons if already voted this session
+      if (sessionStorage.getItem(vote.item)) {
+        section.querySelectorAll("button").forEach(btn => btn.disabled = true);
+      }
     });
   } catch (err) {
     console.error("Failed to load votes:", err);
@@ -276,6 +281,12 @@ async function loadVotes() {
 
 // Submit vote
 async function submitVote(item, type) {
+  // Check if user already voted this session
+  if (sessionStorage.getItem(item)) {
+    alert("You can only vote once per item per window.");
+    return;
+  }
+
   try {
     const res = await fetch(`${API_URL}?item=${item}`);
     const records = await res.json();
@@ -298,6 +309,13 @@ async function submitVote(item, type) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedData)
     });
+
+    // Mark as voted in this session
+    sessionStorage.setItem(item, type);
+
+    // Disable buttons for this item
+    const section = document.querySelector(`[data-item="${item}"]`);
+    if (section) section.querySelectorAll("button").forEach(btn => btn.disabled = true);
 
     loadVotes(); // refresh counts
   } catch (err) {
@@ -323,6 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
 </script>
 
